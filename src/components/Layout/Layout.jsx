@@ -1,4 +1,4 @@
-import MyHeader from '../Header/Header';
+import React from 'react';
 import styles from './styles.module.scss';
 
 function MainLayout({ children }) {
@@ -6,9 +6,7 @@ function MainLayout({ children }) {
 
   return (
     <main className={wrapLayout}>
-      <div className={container}>
-        <MyHeader />
-      </div>
+      <div className={container}>{children}</div>
     </main>
   );
 }
