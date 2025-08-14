@@ -4,15 +4,23 @@ import styles from './styles.module.scss';
 import AvandceHeading from '@components/AdvanceHeading/AdvanceHeading';
 import Info from '@components/Info/Info';
 import HeadingListProduct from '@components/HeadingListProduct/HeadingListProducts';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getProducts } from '@/apis/productsService';
+import PopularProduct from '@components/PopularProduct/PopularProduct';
 
 function HomePage() {
 
+  const [ListProducts, setListProducts] = useState([]);
+
   useEffect(() => {
-    getProducts();
-  }, [])
-  const { container } = styles;
+    getProducts().then((res) => {
+      setListProducts(res.contents);
+    });
+  }, []);
+
+  //console.log(ListProducts, 'ListProducts');
+
+  //const { container } = styles;
   return (
     <div>
       <div> 
@@ -21,7 +29,8 @@ function HomePage() {
         <Banner />
         <Info/>
         <AvandceHeading/>
-        <HeadingListProduct/>
+        <HeadingListProduct data={ListProducts.slice(0,2)}/>
+        <PopularProduct data={ListProducts.slice(2,10)}/>
 
       </div>
     </div>

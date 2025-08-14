@@ -12,8 +12,8 @@ function ProductItem({
     const {boxImg, showImgWhenHover, showFncWhenHover, boxIcon, title, priceItem} = styles;
     return <div>
         <div className={boxImg}>
-            <img src="https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Image-1.1-min.jpg" alt="Product's Picture" />
-            <img src="https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Image-1.2-min.jpg" alt="Product's Picture" className={showImgWhenHover}/>
+            <img src={src} alt="Product's Picture" />
+            <img src={prevSrc} alt="Product's Picture" className={showImgWhenHover}/>
         
         <div className={showFncWhenHover}>
             <div className={boxIcon}>
@@ -30,8 +30,8 @@ function ProductItem({
             </div>
         </div>
         </div>
-        <div className={title}>10K Yellow Gold</div>
-        <div className={priceItem}>$99.99</div>
+        <div className={title}>{name}</div>
+        <div className={priceItem}>{price}</div>
     </div>
 }
 
