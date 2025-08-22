@@ -31,5 +31,9 @@
   &:hover {
     background-color: $primary_color;
     color: $white_color;
+  }
 }
+
+.fullWidthBtn {
+  width: 100%;
 }

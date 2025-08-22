@@ -1,12 +1,16 @@
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 
-function Button({ content, isPrimary = true }) {
-  const { btn, primaryBtn, secondaryBtn } = styles;
+function Button({ content, isPrimary = true, isFullWidth = false }) {
+  const { btn, primaryBtn, secondaryBtn, fullWidthBtn } = styles;
+  
   return <button className={classNames(btn, {
     [primaryBtn] : isPrimary,
-    [secondaryBtn]: !isPrimary
-  })}>{content}</button>;
+    [secondaryBtn]: !isPrimary,
+    [fullWidthBtn]: isFullWidth
+  })}>
+    {content}
+    </button>;
 }
 
 export default Button;

@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import Button from "@components/Button/Button";
 
 function Login() {
-const {container, title, boxRememberMe, lostPw, boxBtn} = styles;
+const {container, title, boxRememberMe, lostPw} = styles;
 
     return (
         <div className={container}>
@@ -17,7 +17,7 @@ const {container, title, boxRememberMe, lostPw, boxBtn} = styles;
                 <span>Remember me</span>
             </div>
             
-            <div className={boxBtn}><Button content={'LOGIN'} /></div>
+            <Button content={'LOGIN'} isFullWidth={true} />
 
             <div className={lostPw}>Lost your password?</div>
 
